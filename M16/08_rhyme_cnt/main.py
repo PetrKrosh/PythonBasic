@@ -1,24 +1,19 @@
-people = int(input('Кол-во человек: '))
-num = int(input('Какое число в считалке? '))
-print('Значит, выбывает каждый', num, ' человек')
 
-players = list(range(1, people + 1))
-play = 0
+list_people = []
+count_members = int(input('Кол-во человек: '))
+list_people = list(range(1, count_members+1))
 
-while len(players) > 1:
-    print('Текущий круг людей:', players)
-    if play + 1 <= len(players):
-        play = play
-    else:
-        play = 0
-    print('Начало счёта с номера ', players[play])
-    for i in range(num - 1):
-        if players[play] != players[-1]:
-            play += 1
-        elif players[play] == players[-1]:
-            play = 0
-    print('Выбывает человек под номером ', players[play])
-    players.remove(players[play])
+while len(list_people) > 1:
+	print('Текущий круг людей: ', list_people)
+	num_for_del = int(input('Номер для выбывания: '))
+	print('Значит, выбывает каждый', num_for_del, '-й человек')
+	if num_for_del <= len(list_people):
+		print('Выбывает человек под номером', num_for_del)
+		list_people.remove(num_for_del)
+	elif num_for_del > len(list_people):
+		num_for_del -= len(list_people)
+		print('Выбывает человек под номером', num_for_del)
+		list_people.remove(num_for_del)
+	# print(list_people)
 
-
-print('Остался человек под номером ', players[0])
+print('Остался человек под номером ',list_people)
