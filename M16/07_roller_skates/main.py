@@ -1,26 +1,23 @@
-rollers_list = []
-size_list = []
+
+list_size_of_sky = []
+list_size_of_legs = []
+
+count_of_sky = int(input('Кол-во коньков: '))
+count_of_people = int(input('Кол-во людей: '))
+
+for i in range(1, count_of_sky+1):
+    print('Размер ', i, '-й пары: ', end=' ')
+    list_size_of_sky.append(input())
+
+for i in range(1, count_of_people+1):
+    print('Размер ноги', i, '-го человека: ', end=' ')
+    list_size_of_legs.append(input())
+
 count = 0
-
-number_of_skates = int(input('\nКол-во роликов: '))
-for i_roller in range(number_of_skates):
-    print('Размер', i_roller + 1, 'пары:', end=' ')
-    size = int(input())
-    rollers_list.append(size)
-
-number_of_people = int(input('\nКол-во людей: '))
-for i_size in range(number_of_people):
-    print('Размер ноги', i_size + 1, 'человека:', end=' ')
-    p_size = int(input())
-    size_list.append(p_size)
-
-for i in rollers_list:
-    for num in range(len(size_list)):
-        if i >= size_list[num]:
+for i_people in list_size_of_legs:
+    for i_sky in list_size_of_sky:
+        if i_sky == i_people:
             count += 1
-            size_list.remove(i)
-            break
-        else:
-            continue
-
-print('\nНаибольшее кол-во людей, которые могут взять ролики:', count)
+            list_size_of_sky.remove(i_sky)
+print(list_size_of_sky)
+print('Наибольшее кол-во людей, которые могут взять ролики: ', count)

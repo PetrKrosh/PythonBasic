@@ -1,3 +1,34 @@
+
+
+list = [11,12,13,14,15]
+new_list = []
+for i in range(len(list)-1, -1, -1):
+    print(list[i])
+    # new_list.append(list[i])
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def palindrome(num_list):
     revers_list = []
     for i_num in range(len(num_list) - 1, -1, -1):
@@ -11,7 +42,7 @@ def palindrome(num_list):
 nums = int(input('Кол-во чисел: '))
 all_num = []
 new_num = []
-answer = []
+answer_ = []
 
 for _ in range(nums):
     num = int(input('Число: '))
