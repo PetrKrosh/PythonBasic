@@ -1,16 +1,11 @@
-def search_h(elem):
-    result = 0
-    for i in elem:
-        if i != 'h':
-            result += 1
-        else:
-            result += 1
-            break
-    return result
+def search_symbol(str, symbol):
+    list_finish = []
+    for i in range(len(str)):
+        if str[i] == symbol:
+            list_finish.append(i)
+    return list_finish
 
+str= 'ashdfhvhdf'
+listt= search_symbol(str, 'h')
 
-text = input('Введите строку: ')
-start = search_h(text)
-end = search_h(text[::-1])
-
-print('Результат: ', text[:start] + text[-end - 1:start - 1:-1] + text[-end:])
+print('Развёрнутая последовательность между первым и последним h:', str[listt[0]+1:listt[-1]])

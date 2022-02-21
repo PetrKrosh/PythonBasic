@@ -1,17 +1,52 @@
-def caesar_cipher(string, user_shift):
-    char_list = [(alphabet[(alphabet.index(sym) + user_shift) % 33] if sym != ' ' else ' ')
-                 for sym in string]
-    new_str = ''
-    for i_char in char_list:
-        new_str += i_char
-    return new_str
+
+str = 'пришло время'
+str = str.strip()
+alphabet = ' абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+result = ''
+secret_str = ''
+k = 3
+
+# for i in str:
+#     result += alphabet[(alphabet.index(i) + k) % len(alphabet)]
+# print('Result: "' + result + '"')
+
+secret_list = [(alphabet[(alphabet.index(i) + k) % len(alphabet)] if i != ' ' else ' ')
+                for i in str]
+
+for i in secret_list:
+    secret_str += i
+print(secret_str)
 
 
-alphabet = 'абвгдеёжзийклмнопрстуфцчшщъыьэюя'
 
-input_str = input('Введите строку: ')
-shift = int(input('Введите сдвиг: '))
 
-output_str = [caesar_cipher(input_str, shift)]
 
-print('Зашифрованная строка: ', output_str)
+
+
+
+
+
+
+
+
+
+
+#
+#
+# def caesar_cipher(string, user_shift):
+#     char_list = [(alphabet[(alphabet.index(sym) + user_shift) % 33] if sym != ' ' else ' ')
+#                  for sym in string]
+#     new_str = ''
+#     for i_char in char_list:
+#         new_str += i_char
+#     return new_str
+#
+#
+# alphabet = 'абвгдеёжзийклмнопрстуфцчшщъыьэюя'
+#
+# input_str = input('Введите строку: ')
+# shift = int(input('Введите сдвиг: '))
+#
+# output_str = [caesar_cipher(input_str, shift)]
+#
+# print('Зашифрованная строка: ', output_str)
