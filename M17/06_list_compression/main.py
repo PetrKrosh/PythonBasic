@@ -1,12 +1,19 @@
-import random
+# Функция добавления всех нулей в конец
+def moveZeros(arr):
+    return [nonZero for nonZero in arr if nonZero != 0] + [Zero for Zero in arr if Zero == 0]
 
-num_list = [random.randint(0, 3) for _ in range(10)]
-print(num_list)
-for num in num_list:
-    if num == 0:
-        num_list.append(num)
-        num_list.remove(num)
+arr = [1, 2, 0, 4, 3, 0, 5, 0]
+L = moveZeros(arr)
+print(L)
 
-print(num_list)
-new_list = [i for i in num_list if i > 0]
-print(new_list)
+L_new = [i for i in L if i != 0]
+print(L_new)
+
+# L = [0, 2, 1, 0, 0, 0, 1, 0, 2, 0]
+# for i in L:
+#     if i == 0:
+#         L.append(L.pop(L.index(0)))
+# print(L)
+#
+# L_new = [i for i in L if i != 0]
+# print(L_new)
